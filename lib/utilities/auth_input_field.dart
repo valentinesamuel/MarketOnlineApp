@@ -17,10 +17,10 @@ class AuthInputField extends StatelessWidget {
       children: [
         TextField(
           keyboardType: inputType,
-          
           decoration: InputDecoration(
             icon: Icon(
               icon,
+              size: 40.0,
               color: Colors.grey,
             ),
             hintText: placeHolder,

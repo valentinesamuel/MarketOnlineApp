@@ -1,13 +1,12 @@
+import 'package:MarketApp/screens/register_screen.dart';
 import 'package:MarketApp/utilities/constants.dart';
-import 'package:MarketApp/utilities/sign_in_out_field.dart';
+import 'package:MarketApp/utilities/auth_input_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
-
-
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
@@ -19,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 57.0, 0, 20),
+                padding: EdgeInsets.fromLTRB(0, 30.0, 0, 20),
                 child: Image.asset(
                   'assets/images/logo.png',
                   height: 120.0,
@@ -45,26 +44,43 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(35.0)),
-                margin: EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 0),
+                margin: EdgeInsets.fromLTRB(15.0, 40.0, 15.0, 0),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(15.0, 55.0, 15.0, 30.0),
+                  padding: EdgeInsets.fromLTRB(15.0, 55.0, 15.0, 30.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text('Username or E-Mail'),
+                      Padding(
+                        padding:  EdgeInsets.symmetric(vertical:8.0),
+                        child: Text('Username or E-Mail'),
+                      ),
                       AuthInputField(
                         icon: Icons.person_outline,
                         placeHolder: 'Your Email Here',
                         inputType: TextInputType.emailAddress,
                       ),
-                      SizedBox(height: 20.0),
-                      Text('Password'),
-                      AuthInputField(
-                        icon: Icons.lock_outline,
-                        placeHolder: 'Your password Here',
-                        
-                        
+                      SizedBox(height: 30.0),
+                      Padding(
+                        padding:  EdgeInsets.symmetric(vertical:8.0),
+                        child: Text('Password'),
                       ),
+                      TextField(
+                        decoration: InputDecoration(
+                          icon: Icon(
+                            Icons.lock_outline,
+                            size: 40.0,
+                            color: Colors.grey,
+                          ),
+                          hintText: 'Enter Your Password here',
+                          border: InputBorder.none,
+                        ),
+                        obscureText: true,
+                      ),
+                      Container(
+                        color: Colors.black38,
+                        height: 1.0,
+                      ),
+                      SizedBox(height: 10.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -76,50 +92,60 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                             child: Text(
                               'Forgot Password?',
-                              style:
-                                  TextStyle(color: KBlueColor, fontSize: 15.0),
+                              style: TextStyle(
+                                  color: KBlueColor, fontSize: 15.0),
                             ),
                           ),
                         ],
                       ),
                       Column(
                         children: <Widget>[
-                          GestureDetector(
-                            onTap: () {
-                              print('This is working');
-                            },
-                            child: Container(
-                              margin: EdgeInsets.fromLTRB(0, 30.0, 0, 35.0),
-                              height: 57.0,
-                              width: double.infinity,
-                              child: Center(
-                                child: Text(
-                                  'Sign In',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20.0),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10.0),
+                            child: GestureDetector(
+                              onTap: () {
+                                print(
+                                    'Congratulations,you have successfully signed ins');
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(0, 30.0, 0, 35.0),
+                                height: 57.0,
+                                width: double.infinity,
+                                child: Center(
+                                  child: Text(
+                                    'Sign In',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20.0),
+                                  ),
                                 ),
+                                decoration: BoxDecoration(
+                                    color: KOrangeColor,
+                                    borderRadius: BorderRadius.circular(18.0)),
                               ),
-                              decoration: BoxDecoration(
-                                  color: KOrangeColor,
-                                  borderRadius: BorderRadius.circular(18.0)),
                             ),
                           ),
-                          RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                fontSize: 15.0,
-                                color: KBlueColor,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('Don\'t have an account?  ',
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 18.0)),
+                              GestureDetector(
+                                onTap: () {
+                                 Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => RegisterScreen()),
+  );
+                                },
+                                child: Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: KBlueColor,
+                                      fontSize: 18.0),
+                                ),
                               ),
-                              children: <TextSpan>[
-                                TextSpan(
-                                    text: 'Don\'t have an account yet?  ',
-                                    style: TextStyle(color: Colors.black)),
-                                TextSpan(
-                                    text: 'Sign Up',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                              ],
-                            ),
+                            ],
                           ),
                         ],
                       ),
