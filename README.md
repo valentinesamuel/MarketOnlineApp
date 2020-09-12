@@ -4,13 +4,12 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is actually my first complete flutter applicatin where i download a complete ui kit and tried to rebuild it the way it is with flutter and dart code.
 
-A few resources to get you started if this is your first Flutter project:
+Download the same ui kit from:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+https://www.uistore.design/items/goonie-online-market-ui-kit-for-adobe-xd-and-sketch/
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+	This app is a food ordering app where users can login and order their foodd while it gets delivered to them.For now, i am only focusing on buioldthe UI with code and maybe later i will focus in the backend..For noe, i am still new with the flutter framework and just wnat to focus on writing code and make sure the UI and page routing are working well..
+	
+	As i prgress, i will keep updating this read me...because i am trying to learn python so that i can use it for automatio too...Thank You
