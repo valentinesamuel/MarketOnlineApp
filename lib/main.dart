@@ -1,8 +1,8 @@
-import 'package:MarketApp/screens/login_screen.dart';
+import 'package:MarketApp/screens/verify_phone_number.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: LoginScreen(),
+    home: PhoneVerifyScreen(),
   ));
 }
