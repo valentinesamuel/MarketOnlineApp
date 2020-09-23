@@ -15,7 +15,7 @@ class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
       backgroundColor: KBlueColor,
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          padding: EdgeInsets.symmetric(horizontal: 5.0),
           child: Column(
             children: <Widget>[
               SizedBox(height: 100.0),
@@ -23,14 +23,14 @@ class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
                 "Getting Started",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
+                    fontSize: 25.0,
                     fontFamily: 'Poppins',
                     color: Colors.white),
               ),
               Padding(
                   padding: EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 0),
                   child: Text(
-                    'Enter Your Phone Number with which an OTP will be sent to you',
+                    'Enter Your Phone Number with which an OTP will be sent to you.',
                     style: TextStyle(
                       fontSize: 18.0,
                       color: Colors.white,
