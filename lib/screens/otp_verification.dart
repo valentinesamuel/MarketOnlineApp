@@ -1,14 +1,14 @@
 import 'package:MarketApp/utilities/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:MarketApp/screens/otp_verification.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
-class PhoneVerifyScreen extends StatefulWidget {
+
+class OTPVerifyScreen extends StatefulWidget {
   @override
-  _PhoneVerifyScreenState createState() => _PhoneVerifyScreenState();
+  _OTPVerifyScreenState createState() => _OTPVerifyScreenState();
 }
 
-class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
+class _OTPVerifyScreenState extends State<OTPVerifyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,28 +54,19 @@ class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
                       SizedBox(
                         height: 23,
                       ),
+                      PinCodeTextField(
+                          appContext: context,
+                          obscureText: true,
+                          keyboardType: TextInputType.number,
+                          length: 4,
+                          onCompleted: (value) => print(value),
+                          onChanged: null),
                       Column(
+                        // Enter the OTP widget here
                         children: <Widget>[
-                          IntlPhoneField(
-                            decoration: InputDecoration(
-                              labelText: 'Phone Number',
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
-                              ),
-                            ),
-                            initialCountryCode: 'NG',
-                            onChanged: (phone) {
-                              print(phone.completeNumber);
-                            },
-                          ),
                           GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => OTPVerifyScreen()),
-  );
-                            },
-                            child: Container(
+                            onTap: () => print("Tapped Me..Ouchy"),
+                                                      child: Container(
                               margin: EdgeInsets.fromLTRB(0, 12.0, 0, 25.0),
                               height: 57.0,
                               width: double.infinity,

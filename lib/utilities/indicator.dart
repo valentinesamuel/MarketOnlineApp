@@ -5,7 +5,7 @@ class Indicator extends StatelessWidget {
  final int positionIndex;
  final int currentIndex;
 
-Indicator({@required this.positionIndex, @required this.currentIndex});
+Indicator({ this.positionIndex,  this.currentIndex});
 
   @override
   Widget build(BuildContext context) {
