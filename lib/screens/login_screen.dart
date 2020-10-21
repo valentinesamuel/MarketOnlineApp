@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Padding(
-                        padding:  EdgeInsets.symmetric(vertical:8.0),
+                        padding: EdgeInsets.symmetric(vertical: 8.0),
                         child: Text('Username or E-Mail'),
                       ),
                       AuthInputField(
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       SizedBox(height: 30.0),
                       Padding(
-                        padding:  EdgeInsets.symmetric(vertical:8.0),
+                        padding: EdgeInsets.symmetric(vertical: 8.0),
                         child: Text('Password'),
                       ),
                       TextField(
@@ -92,8 +92,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                             child: Text(
                               'Forgot Password?',
-                              style: TextStyle(
-                                  color: KBlueColor, fontSize: 15.0),
+                              style:
+                                  TextStyle(color: KBlueColor, fontSize: 15.0),
                             ),
                           ),
                         ],
@@ -132,10 +132,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                       color: Colors.black, fontSize: 18.0)),
                               GestureDetector(
                                 onTap: () {
-                                 Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => RegisterScreen()),
-  );
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => RegisterScreen()),
+                                  );
                                 },
                                 child: Text(
                                   'Sign Up',

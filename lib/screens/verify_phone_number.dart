@@ -64,16 +64,15 @@ class _PhoneVerifyScreenState extends State<PhoneVerifyScreen> {
                               ),
                             ),
                             initialCountryCode: 'NG',
-                            onChanged: (phone) {
-                              print(phone.completeNumber);
-                            },
+                            onSubmitted: (phone) => print("Your phone number is $phone"),
                           ),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => OTPVerifyScreen()),
-  );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => OTPVerifyScreen()),
+                              );
                             },
                             child: Container(
                               margin: EdgeInsets.fromLTRB(0, 12.0, 0, 25.0),
