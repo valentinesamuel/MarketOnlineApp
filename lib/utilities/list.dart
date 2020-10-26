@@ -15,6 +15,7 @@ List images = [
   AssetImage("assets/food/rice.jpg"),
   AssetImage("assets/food/vegetables.jpg"),
   AssetImage("assets/food/wine.jpg"),
+  AssetImage("assets/food/alcohol.jpg"),
 ];
 
 List labels = [
@@ -32,6 +33,7 @@ List labels = [
   "Rice",
   "Vegetables",
   "Wine",
+  "Alcohol"
 ];
 
 //For Deal Card
@@ -53,27 +55,65 @@ class Deals {
 }
 
 List<Deals> dealDetails = [
-
-  // TODO! Comeback to complete the correct editin of this listview builder
   Deals(
       currentPrice: 23,
-      dealName: "Large Coke",
+      dealName: "Ice-Cream",
       estimatedTime: "4 minutes away",
       oldPrice: 24,
       quantity: "5 pieces",
       picture: AssetImage("assets/food/ice-cream-pack.jpg")),
   Deals(
       currentPrice: 23,
-      dealName: "Large Fanta Pack",
+      dealName: "Large Coca-Cola Pack",
       estimatedTime: "21 minutes away",
       oldPrice: 67,
       quantity: "3 pieces",
       picture: AssetImage("assets/food/coca-cola.jpg")),
   Deals(
-      currentPrice:61,
-      dealName: "Large Sprpite Pack",
+      currentPrice: 61,
+      dealName: "Burger",
       estimatedTime: "26 minutes away",
       oldPrice: 69,
       quantity: "9 pieces",
       picture: AssetImage("assets/food/burger.jpg")),
+  Deals(
+      currentPrice: 15,
+      dealName: "Strawberry MilkShake",
+      estimatedTime: "23 minutes away",
+      oldPrice: 54,
+      quantity: "2 pieces",
+      picture: AssetImage("assets/food/milkshake-strawberry.jpg")),
+];
+
+class DiscountOffers {
+  AssetImage discountImage;
+  int oldPrice;
+  int newPrice;
+  String availablility;
+
+  DiscountOffers(
+      {this.availablility, this.discountImage, this.newPrice, this.oldPrice});
+}
+
+List<DiscountOffers> discountInfo = [
+  DiscountOffers(
+      availablility: "Available till 10 December, 2020",
+      discountImage: AssetImage("assets/food/hamburger.png"),
+      newPrice: 23,
+      oldPrice: 86),
+  DiscountOffers(
+      availablility: "Available till 12 January, 2021",
+      discountImage: AssetImage("assets/food/hamburger.png"),
+      newPrice: 41,
+      oldPrice: 12),
+  DiscountOffers(
+      availablility: "Available till 31 Febuary, 2021",
+      discountImage: AssetImage("assets/food/hamburger.png"),
+      newPrice: 23,
+      oldPrice: 86),
+  // DiscountOffers(
+  //     availablility: "Available till 2 November, 2020",
+  //     discountImage: AssetImage("assets/food/milkshake-strawberry.jpg"),
+  //     newPrice: 23,
+  //     oldPrice: 56),
 ];

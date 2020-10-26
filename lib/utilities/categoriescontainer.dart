@@ -9,7 +9,7 @@ class CategoriesContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 18.0),
+      padding: EdgeInsets.only(left: 0, right: 15),
       child: Column(
         children: [
           Container(
