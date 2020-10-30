@@ -65,7 +65,6 @@ class _MainPageState extends State<MainPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 6),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: Container(
@@ -191,7 +190,7 @@ class _MainPageState extends State<MainPage> {
                     Text(
                       "See All (14)",
                       style: TextStyle(
-                          fontFamily: "Poppins", color: Color(0xffe1e1e1)),
+                          fontFamily: "Poppins", color: Color(0xffC0BCB9)),
                     ),
                   ],
                 ),
