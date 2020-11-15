@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {
+// ! This widget uses 1% of the screen
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xffF8F8F8),
-      height: 70,
+      height: MediaQuery.of(context).size.height * 0.1,
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical:8.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-               
                 Text(
                   'Total:',
                   style: TextStyle(fontSize: 17),
@@ -36,10 +37,7 @@ class BottomNavBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(23)),
             child: Center(
                 child: Text('Purchase'.toUpperCase(),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 19
-                    ))),
+                    style: TextStyle(color: Colors.white, fontSize: 19))),
           ),
         ],
       ),
