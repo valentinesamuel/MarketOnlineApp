@@ -1,10 +1,10 @@
 # MarketApp
 
-A new Flutter project.
+MarketApp is a n aplication that allow users order food from their favorites resturant, see the location of resturants and check current deals.
 
 ## Getting Started
 
-This project is actually my first complete flutter applicatin where i download a complete ui kit and tried to rebuild it the way it is with flutter and dart code.
+This project is actually my first complete flutter application where i download a complete ui kit and tried to rebuild it the way it is with flutter.
 
 Download the same ui kit from:
 
