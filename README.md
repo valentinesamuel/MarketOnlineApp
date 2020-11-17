@@ -41,6 +41,6 @@ Anyone who wants to improve the app or maybe implement the backend can clone thi
 ## Credits
 
 Here, contributors will be acknowledged. .
-The ui kit can be downloaded from
+❤❤❤❤
 
-[I'm an inline-style link with title](https://www.uistore.design/items/goonie-online-market-ui-kit-for-adobe-xd-and-sketch/ "Download the UI kit that was implemented here")
+[Download the UI kit here](https://www.uistore.design/items/goonie-online-market-ui-kit-for-adobe-xd-and-sketch/ "Download the UI kit")
