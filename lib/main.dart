@@ -1,5 +1,7 @@
 import 'package:MarketApp/utilities/bottomNavBar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MaterialApp(home: StorePage()));
@@ -8,6 +10,11 @@ void main() {
 class StorePage extends StatefulWidget {
   @override
   _StorePageState createState() => _StorePageState();
+}
+
+int number;
+filler(number) {
+  number = number;
 }
 
 class _StorePageState extends State<StorePage> {
@@ -41,7 +48,7 @@ class _StorePageState extends State<StorePage> {
                           child: Container(
                             child: Align(
                               alignment: Alignment.center,
-                              child: Text("APPS"),
+                              child: Text("Info"),
                             ),
                           ),
                         ),
@@ -49,7 +56,7 @@ class _StorePageState extends State<StorePage> {
                           child: Container(
                             child: Align(
                               alignment: Alignment.center,
-                              child: Text("MOVIES"),
+                              child: Text("Menu"),
                             ),
                           ),
                         ),
@@ -57,7 +64,7 @@ class _StorePageState extends State<StorePage> {
                           child: Container(
                             child: Align(
                               alignment: Alignment.center,
-                              child: Text("GAMES"),
+                              child: Text("Reviews",),
                             ),
                           ),
                         ),
@@ -85,9 +92,28 @@ class _StorePageState extends State<StorePage> {
                               ),
                               Row(
                                 children: [
-                                  Icon(Icons.star_border),
-                                  Icon(Icons.star_border),
-                                  Icon(Icons.star_border),
+                                  RatingBar(
+                                    initialRating: 2,
+                                    direction: Axis.horizontal,
+                                    allowHalfRating: true,
+                                    itemCount: 5,
+                                    itemSize: 30,
+                                    ratingWidget: RatingWidget(
+                                      full: Icon(
+                                        Icons.star,
+                                        color: Color(0xffFFD25D),
+                                      ),
+                                      empty: Icon(Icons.star_outline,
+                                          color: Color(0xffFFD25D)),
+                                      half: Icon(Icons.star_half,
+                                          color: Color(0xffFFD25D)),
+                                    ),
+                                    itemPadding:
+                                        EdgeInsets.symmetric(horizontal: 1.0),
+                                    onRatingUpdate: (rating) {
+                                      print(rating);
+                                    },
+                                  ),
                                   SizedBox(
                                     width: 12,
                                   ),
@@ -136,8 +162,13 @@ class _StorePageState extends State<StorePage> {
                                       padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
-                                          Icon(Icons.phone),
-                                          Text("+4 232 2323 23")
+                                          Icon(Icons.phone,
+                                              color: Color(0xffEF6060)),
+                                          Text(
+                                            "   +4 232 2323 23",
+                                            style: TextStyle(
+                                                color: Color(0xffEF6060)),
+                                          )
                                         ],
                                       ),
                                     ),
@@ -152,8 +183,15 @@ class _StorePageState extends State<StorePage> {
                                       padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         children: [
-                                          Icon(Icons.plagiarism),
-                                          Text("+4 232 2323 23")
+                                          FaIcon(
+                                            FontAwesomeIcons.globe,
+                                            color: Color(0xff59A3BC),
+                                          ),
+                                          Text(
+                                            "   bugradere.com",
+                                            style: TextStyle(
+                                                color: Color(0XFF59A3BC)),
+                                          )
                                         ],
                                       ),
                                     ),
