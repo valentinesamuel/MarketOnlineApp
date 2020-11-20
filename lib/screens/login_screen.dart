@@ -1,6 +1,6 @@
-import 'package:MarketApp/screens/register_screen.dart';
-import 'package:MarketApp/utilities/constants.dart';
-import 'package:MarketApp/utilities/auth_input_field.dart';
+import '../screens/register_screen.dart';
+import '../utilities/constants.dart';
+import '../utilities/auth_input_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {

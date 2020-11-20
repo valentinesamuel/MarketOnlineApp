@@ -1,7 +1,7 @@
-import 'package:MarketApp/utilities/bonusdeals.dart';
-import 'package:MarketApp/utilities/categories%20row.dart';
-import 'package:MarketApp/utilities/deals_Cart.dart';
-import 'package:MarketApp/utilities/list.dart';
+import '../utilities/bonusdeals.dart';
+import '../utilities/categories%20row.dart';
+import '../utilities/deals_Cart.dart';
+import '../utilities/list.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

@@ -1,6 +1,6 @@
-import 'package:MarketApp/utilities/constants.dart';
-import 'package:MarketApp/utilities/indicator.dart';
-import 'package:MarketApp/utilities/onboarding_container.dart';
+import '../utilities/constants.dart';
+import '../utilities/indicator.dart';
+import '../utilities/onboarding_container.dart';
 import 'package:flutter/material.dart';
 
 

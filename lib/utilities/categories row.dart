@@ -1,5 +1,5 @@
-import 'package:MarketApp/utilities/categoriescontainer.dart';
-import 'package:MarketApp/utilities/list.dart';
+import './categoriescontainer.dart';
+import './list.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesRow extends StatelessWidget {

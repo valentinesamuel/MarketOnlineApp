@@ -1,5 +1,5 @@
-import 'package:MarketApp/utilities/auth_input_field.dart';
-import 'package:MarketApp/utilities/constants.dart';
+import '../utilities/auth_input_field.dart';
+import './../utilities/constants.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {

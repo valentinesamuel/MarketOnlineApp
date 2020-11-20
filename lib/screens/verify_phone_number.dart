@@ -1,7 +1,7 @@
-import 'package:MarketApp/utilities/constants.dart';
+import './../utilities/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:MarketApp/screens/otp_verification.dart';
+import './otp_verification.dart';
 
 class PhoneVerifyScreen extends StatefulWidget {
   @override
