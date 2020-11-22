@@ -1,7 +1,10 @@
+import 'package:MarketApp/utilities/list.dart';
+
 import './utilities/bottomNavBar.dart';
 import 'package:flutter/material.dart';
-
+import './utilities/list.dart';
 import 'utilities/info_tab_store_screen.dart';
+import 'utilities/store_featured_card_template.dart';
 
 void main() {
   runApp(MaterialApp(home: StorePage()));
@@ -80,13 +83,66 @@ class _StorePageState extends State<StorePage> {
 
                     child: TabBarView(children: <Widget>[
                       InfoTabStoreScreen(),
-                      Container(
-                        child: Center(
-                          child: Text('Display Tab 2',
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.bold)),
-                        ),
+                      //This is where the menu tab starts from
+                      Column(
+                        children: [
+                          Container(
+                            height: 30,
+                            width: double.infinity,
+                            child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: foodCategories.length,
+                                itemBuilder: (context, int index) {
+                                  return Container(
+                                    height: 30,
+                                    width: 120,
+                                    margin: EdgeInsets.only(right: 20),
+                                    padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                                    child: Center(
+                                        child: Text(
+                                      foodCategories[index],
+                                      style: TextStyle(color: Colors.blue[900]),
+                                    )),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: Color(0xffCDEEFB),
+                                    ),
+                                  );
+                                }),
+                          ),
+                          Text('Featured'),
+
+                          //Listview
+                          //Listview
+                          //Listview
+
+                          Container(
+                            height: 300,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: storeFeaturedItems.length,
+                              itemBuilder: (context, index) =>
+                                  StoreFeaturedCard(
+                                rater: storeFeaturedItems[index].starRating,
+                                name: storeFeaturedItems[index].itemName,
+                                color: storeFeaturedItems[index].color,
+                                pic: storeFeaturedItems[index].picture,
+                                rating: storeFeaturedItems[index].starRating,
+                                type: storeFeaturedItems[index].typeName,
+                                bgColor: storeFeaturedItems[index].bgColor,
+                                votesNumber:
+                                    storeFeaturedItems[index].numberofVotes,
+                              ),
+                            ),
+                          ),
+                          Text('data')
+
+                          //Lisfrb
+                          //Lisfrb
+                          //Lisfrb
+                        ],
                       ),
+                      //This is where the menu tab ends
                       Container(
                         child: Center(
                           child: Text('Display Tab 3',

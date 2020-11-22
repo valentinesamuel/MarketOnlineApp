@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 List images = [
   AssetImage("assets/food/steak.jpg"),
@@ -35,6 +36,8 @@ List labels = [
   "Wine",
   "Alcohol"
 ];
+
+List foodCategories = ['Drinks', 'Food', 'Desert', 'Snacks', 'Others'];
 
 //For Deal Card
 class Deals {
@@ -85,6 +88,127 @@ List<Deals> dealDetails = [
       picture: AssetImage("assets/food/milkshake-strawberry.jpg")),
 ];
 
+//For Sore featured items
+class StoreFeatured {
+  RatingBar starRating;
+  int numberofVotes;
+  String itemName;
+  String color;
+  String typeName;
+  AssetImage picture;
+  Color bgColor;
+
+  StoreFeatured(
+      {this.color,
+      this.itemName,
+      this.numberofVotes,
+      this.picture,
+      this.bgColor,
+      this.starRating,
+      this.typeName});
+}
+
+List<StoreFeatured> storeFeaturedItems = [
+  StoreFeatured(
+    bgColor: Color(0xffD6E7FF),
+    picture: AssetImage("assets/food/cocktail-jug.png"),
+    color: "Blue",
+    itemName: "Coctail",
+    typeName: "Diamond",
+    numberofVotes: 123,
+    starRating: RatingBar(
+      initialRating: 2,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemCount: 5,
+      itemSize: 25,
+      ratingWidget: RatingWidget(
+        full: Icon(
+          Icons.star,
+          color: Colors.blue,
+        ),
+        empty: Icon(Icons.star_outline, color: Colors.blue),
+        half: Icon(Icons.star_half, color: Colors.blue),
+      ),
+      itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+      onRatingUpdate: (rating) {},
+    ),
+  ),
+  StoreFeatured(
+    picture: AssetImage("assets/food/coffeer.png"),
+        bgColor: Color(0xffD6E7FF),
+
+    color: "Caramel",
+    itemName: "Coffee",
+    typeName: "Latte",
+    numberofVotes: 125,
+    starRating: RatingBar(
+      initialRating: 1,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemCount: 5,
+      itemSize: 25,
+      ratingWidget: RatingWidget(
+        full: Icon(
+          Icons.star,
+          color: Color(0xffFA8968),
+        ),
+        empty: Icon(Icons.star_outline, color: Color(0xffFA8968)),
+        half: Icon(Icons.star_half, color: Color(0xffFA8968)),
+      ),
+      itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+      onRatingUpdate: (rating) {},
+    ),
+  ),
+  StoreFeatured(
+    picture: AssetImage("assets/food/juice.png"),
+        bgColor: Color(0xffD6E7FF),
+
+    color: "Orange",
+    itemName: "Juice",
+    typeName: "Fruit",
+    numberofVotes: 500,
+    starRating: RatingBar(
+      initialRating: 4,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemCount: 5,
+      itemSize: 25,
+      ratingWidget: RatingWidget(
+        full: Icon(Icons.star, color: Colors.orange[300]),
+        empty: Icon(Icons.star_outline, color: Colors.orange[300]),
+        half: Icon(Icons.star_half, color: Colors.orange[300]),
+      ),
+      itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+      onRatingUpdate: (rating) {},
+    ),
+  ),
+  StoreFeatured(
+    picture: AssetImage("assets/food/mango.png"),
+    color: "Mango",
+        bgColor: Color(0xffD6E7FF),
+
+    itemName: "Juice",
+    typeName: "Fruit",
+    numberofVotes: 444,
+    starRating: RatingBar(
+      initialRating: 0,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemCount: 5,
+      itemSize: 25,
+      ratingWidget: RatingWidget(
+        full: Icon(Icons.star, color: Color(0xffC17E1D)),
+        empty: Icon(Icons.star_outline, color: Color(0xffC17E1D)),
+        half: Icon(Icons.star_half, color: Color(0xffC17E1D)),
+      ),
+      itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+      onRatingUpdate: (rating) {},
+    ),
+  ),
+];
+
+//For discount offers
 class DiscountOffers {
   AssetImage discountImage;
   int oldPrice;
@@ -111,9 +235,4 @@ List<DiscountOffers> discountInfo = [
       discountImage: AssetImage("assets/food/hamburger.png"),
       newPrice: 23,
       oldPrice: 86),
-  // DiscountOffers(
-  //     availablility: "Available till 2 November, 2020",
-  //     discountImage: AssetImage("assets/food/milkshake-strawberry.jpg"),
-  //     newPrice: 23,
-  //     oldPrice: 56),
 ];

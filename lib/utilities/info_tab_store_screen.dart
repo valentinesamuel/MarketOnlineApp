@@ -29,7 +29,7 @@ class InfoTabStoreScreen extends StatelessWidget {
                       Icons.star,
                       color: Color(0xffFFD25D),
                     ),
-                    empty: Icon(Icons.star_outline, color: Color(0xffFFD25D)),
+                    empty: Icon(Icons.star_outline, color: Color(0xffFFD25D), ),
                     half: Icon(Icons.star_half, color: Color(0xffFFD25D)),
                   ),
                   itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
