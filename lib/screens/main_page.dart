@@ -1,10 +1,11 @@
+import 'package:MarketApp/screens/productScreen.dart';
+
 import '../utilities/bonusdeals.dart';
 import '../utilities/categories%20row.dart';
 import '../utilities/deals_Cart.dart';
 import '../utilities/list.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 
 class MainPage extends StatefulWidget {
   @override
@@ -232,13 +233,22 @@ class _MainPageState extends State<MainPage> {
                     scrollDirection: Axis.horizontal,
                     itemCount: dealDetails.length,
                     itemBuilder: (context, index) => Container(
-                      child: DealsCard(
-                          dealTitle: dealDetails[index].dealName,
-                          foodPic: dealDetails[index].picture,
-                          eta: dealDetails[index].estimatedTime,
-                          currentPrice: dealDetails[index].currentPrice,
-                          oldPrice: dealDetails[index].oldPrice,
-                          quantity: dealDetails[index].quantity),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProductDetail()),
+                          );
+                        },
+                        child: DealsCard(
+                            dealTitle: dealDetails[index].dealName,
+                            foodPic: dealDetails[index].picture,
+                            eta: dealDetails[index].estimatedTime,
+                            currentPrice: dealDetails[index].currentPrice,
+                            oldPrice: dealDetails[index].oldPrice,
+                            quantity: dealDetails[index].quantity),
+                      ),
                     ),
                   ),
                 ),
@@ -252,74 +262,79 @@ class _MainPageState extends State<MainPage> {
 
               SizedBox(height: 12),
               // ! This is where the column ends
-              Container(
-                height: 60,
-                width: double.infinity,
-                color: Colors.grey[200],
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+              Hero(
+                tag: 'main',
+                child: Material(
+                  child: Container(
+                    height: 60,
+                    width: double.infinity,
+                    color: Colors.grey[200],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        FaIcon(
-                          FontAwesomeIcons.store,
-                          color: Color(0xff949494),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.store,
+                              color: Color(0xff949494),
+                            ),
+                            Text('Grocery')
+                          ],
                         ),
-                        Text('Grocery')
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FaIcon(
-                          FontAwesomeIcons.bell,
-                          color: Color(0xff949494),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.bell,
+                              color: Color(0xff949494),
+                            ),
+                            Text('News')
+                          ],
                         ),
-                        Text('News')
-                      ],
-                    ),
-                    Stack(overflow: Overflow.visible, children: [
-                      Positioned(
-                        top: -20,
-                        left: -30,
-                        child: Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(50),
+                        Stack(overflow: Overflow.visible, children: [
+                          Positioned(
+                            top: -20,
+                            left: -30,
+                            child: Container(
+                              height: 60,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Center(
+                                  child: FaIcon(
+                                FontAwesomeIcons.shoppingCart,
+                                color: Colors.white,
+                              )),
+                            ),
                           ),
-                          child: Center(
-                              child: FaIcon(
-                            FontAwesomeIcons.shoppingCart,
-                            color: Colors.white,
-                          )),
+                          Column()
+                        ]),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.heart,
+                              color: Color(0xff949494),
+                            ),
+                            Text('Favorites')
+                          ],
                         ),
-                      ),
-                      Column()
-                    ]),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FaIcon(
-                          FontAwesomeIcons.heart,
-                          color: Color(0xff949494),
-                        ),
-                        Text('Favorites')
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.wallet,
+                              color: Color(0xff949494),
+                            ),
+                            Text('Wallet')
+                          ],
+                        )
                       ],
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FaIcon(
-                          FontAwesomeIcons.wallet,
-                          color: Color(0xff949494),
-                        ),
-                        Text('Wallet')
-                      ],
-                    )
-                  ],
+                  ),
                 ),
               )
             ],

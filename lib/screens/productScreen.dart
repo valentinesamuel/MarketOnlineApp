@@ -16,15 +16,18 @@ class ProductDetail extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Container(
-                      height: 200,
-                      width: 200,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(
-                              'assets/food/strawberry-nobg.png',
-                            ),
-                            fit: BoxFit.cover),
+                    Hero(
+                      tag: 'main',
+                      child: Container(
+                        height: 200,
+                        width: 200,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(
+                                'assets/food/strawberry-nobg.png',
+                              ),
+                              fit: BoxFit.cover),
+                        ),
                       ),
                     ),
                     Column(
@@ -187,7 +190,9 @@ class ProductDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-                BottomNavBar()
+                BottomNavBar(
+                  textContent: 'purchase',
+                )
               ],
             ),
             Positioned(

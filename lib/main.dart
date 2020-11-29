@@ -7,17 +7,14 @@ import 'utilities/info_tab_store_screen.dart';
 import 'utilities/store_featured_card_template.dart';
 
 void main() {
-  runApp(MaterialApp(home: StorePage()));
+  runApp(MaterialApp(
+    home: StorePage(),
+  ));
 }
 
 class StorePage extends StatefulWidget {
   @override
   _StorePageState createState() => _StorePageState();
-}
-
-int number;
-filler(number) {
-  number = number;
 }
 
 class _StorePageState extends State<StorePage> {
@@ -154,7 +151,9 @@ class _StorePageState extends State<StorePage> {
                   ),
                 ]),
           ),
-          BottomNavBar(),
+          BottomNavBar(
+            textContent: "order now",
+          ),
         ],
       ),
     );

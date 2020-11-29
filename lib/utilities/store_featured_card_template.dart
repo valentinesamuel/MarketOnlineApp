@@ -57,7 +57,7 @@ class StoreFeaturedCard extends StatelessWidget {
           Positioned(
             right: -20,
             bottom: -20,
-            child: FloatingActionButton(onPressed: () => {}, elevation: 0)
+            child: FloatingActionButton(onPressed: () => {}, elevation: 0,child: Icon(Icons.add),)
           ),
         ],
       ),

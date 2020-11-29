@@ -30,14 +30,14 @@ class DealsCard extends StatelessWidget {
                   child: Stack(
                     children: [
                       Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: foodPic, fit: BoxFit.cover),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(19))),
-                        height: 100,
-                        width: 100,
-                      ),
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: foodPic, fit: BoxFit.cover),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(19))),
+                          height: 100,
+                          width: 100,
+                        ),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
@@ -50,7 +50,6 @@ class DealsCard extends StatelessWidget {
                             color: Colors.red,
                           ),
                         ),
-                        
                       )
                     ],
                   ),
@@ -58,18 +57,19 @@ class DealsCard extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(right:15.0),
+              padding: EdgeInsets.only(right: 15.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(dealTitle,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
                   SizedBox(height: 5),
                   Text(
                     quantity,
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
                   ),
                   SizedBox(height: 7),
                   Row(
@@ -97,7 +97,9 @@ class DealsCard extends StatelessWidget {
                       Text(
                         '\$$oldPrice',
                         style: TextStyle(
-                            fontSize: 16, decoration: TextDecoration.lineThrough,color: Colors.grey),
+                            fontSize: 16,
+                            decoration: TextDecoration.lineThrough,
+                            color: Colors.grey),
                       ),
                     ],
                   )
