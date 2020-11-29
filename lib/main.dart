@@ -1,3 +1,4 @@
+import 'package:MarketApp/utilities/deals_Cart.dart';
 import 'package:MarketApp/utilities/list.dart';
 
 import './utilities/bottomNavBar.dart';
@@ -82,9 +83,10 @@ class _StorePageState extends State<StorePage> {
                       InfoTabStoreScreen(),
                       //This is where the menu tab starts from
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: 30,
+                            height: MediaQuery.of(context).size.height * 0.03,
                             width: double.infinity,
                             child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
@@ -114,7 +116,7 @@ class _StorePageState extends State<StorePage> {
                           //Listview
 
                           Container(
-                            height: 300,
+                            height: MediaQuery.of(context).size.height * 0.3,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: storeFeaturedItems.length,
@@ -132,10 +134,28 @@ class _StorePageState extends State<StorePage> {
                               ),
                             ),
                           ),
-                          Text('data')
+                          Text('data'),
 
-                          //Lisfrb
-                          //Lisfrb
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Container(
+                              height: MediaQuery.of(context).size.height * 0.25,
+                              child: ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                itemCount: dealDetails.length,
+                                itemBuilder: (context, index) => Container(
+                                  child: DealsCard(
+                                      dealTitle: dealDetails[index].dealName,
+                                      foodPic: dealDetails[index].picture,
+                                      eta: dealDetails[index].estimatedTime,
+                                      currentPrice:
+                                          dealDetails[index].currentPrice,
+                                      oldPrice: dealDetails[index].oldPrice,
+                                      quantity: dealDetails[index].quantity),
+                                ),
+                              ),
+                            ),
+                          ),
                           //Lisfrb
                         ],
                       ),
